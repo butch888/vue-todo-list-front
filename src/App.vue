@@ -314,6 +314,12 @@ const isListEmpty = computed(() => todos.length === 0)
   opacity: 0.5;
 }
 
+.todo-form__button:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn--delete:hover {
   background-color: #fed7d7;
 }
@@ -451,12 +457,6 @@ const isListEmpty = computed(() => todos.length === 0)
   .todo-form__button {
     padding: 1rem;
     width: 100%;
-  }
-
-  .todo-form__button:disabled {
-    background-color: #cbd5e0;
-    cursor: not-allowed;
-    transform: none;
   }
 
   .todo-app__footer {
