@@ -158,7 +158,14 @@ const isListEmpty = computed(() => todos.length === 0)
           </button>
         </li>
       </ul>
-      <div v-if="todos.length === 0" class="todo-list__empty">
+      <div
+        v-if="
+          todos.length === 0 ||
+          (todos.filter((todo) => !todo.completed).length === 0 && filter === 'active') ||
+          (todos.filter((todo) => todo.completed).length === 0 && filter === 'completed')
+        "
+        class="todo-list__empty"
+      >
         <p>Список задач пуст</p>
       </div>
     </div>
